@@ -1,0 +1,41 @@
+{
+  "footer": [
+    {
+      "id": 1,
+      "title": "Get Started",
+      "list": [
+        "Get This Document",
+        "Read Document",
+        "Get Supported",
+        "More Music Themes"
+      ]
+    },
+    {
+        "id":2,
+        "title": "Browse & Explore",
+        "list": ["Streaming Library","Live Radio Stations","Icecast","Shoutcast","Youtube Music","Press"]
+    },
+    {
+        "id": 3,
+        "title":"Account",
+        "list":["Sign Up","Verified on Musicca","Start Upload"]
+    },
+    {
+        "id":4,
+        "title":"About",
+        "list":["About Us","Contact","Terms","Service Policy"]
+    }
+  ],
+  "sidebar":[
+    {
+      "id":1,
+      "sidebarTitle":"Browse",
+      "sidebarList":["Discover","Browse","New Release","Popular","Charts","Radio"]
+    },
+    {
+      "id":2,
+      "sidebarTitle":"Library",
+      "sidebarList":["Stream","Playlists","Likes"]
+    }
+  ]
+}
