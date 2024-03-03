@@ -1,5 +1,6 @@
 import { HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Button,
   Flex,
   HStack,
@@ -8,46 +9,43 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  useDisclosure,
 } from "@chakra-ui/react";
 import React, { MutableRefObject, useState } from "react";
 import Sidebar from "./Sidebar.tsx";
-type THeaderProps={
-  isOpen:any;
-  onOpen: any;
-  onClose: any;
-  btnRef: any
-}
-const Header:React.FC<THeaderProps> = ({isOpen,onOpen,onClose,btnRef}) => {
-  const [toggleButton, setToggleButton] = useState(false);
-  const openToggleButton = () => {
-    setToggleButton(!toggleButton);
-  };
-  return (
-    <Flex padding={20} justifyContent={"space-between"} alignItems={"center"}>
-      <HStack gap={20}>
-        <HamburgerIcon onClick={openToggleButton} ref={btnRef} />
 
-        {toggleButton && <Sidebar />}
+const Header= () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleMenuClick = () =>{
+    setMenuOpen(!menuOpen);
+  }
+  return (
+    <>
+    <Flex padding={20} justifyContent={"space-between"} alignItems={"center"} >
+      <HStack gap={20}>
+        <HamburgerIcon  onClick={handleMenuClick}/>
         <Image src="/assets/logo.png" alt="logo" width="150px" />
       </HStack>
       <HStack width="40%" justify="center">
-        <InputGroup>
+        <InputGroup >
           <Input
             placeholder="Search..."
+            bg="#ECE7E7"
             width="100%"
             padding={10}
-            borderWidth="1px 0 1px 1px"
+            borderWidth="0"
             type="text"
             outline="none"
             borderRadius="20px 0 0 20px"
+            
           />
           <IconButton
             icon={<SearchIcon />}
             aria-label={""}
             outline="none"
             padding={10}
-            bg="transparent"
-            borderWidth="1px 1px 1px 0"
+            bg="#ECE7E7"
+            borderWidth="0"
             borderRadius="0 20px 20px 0"
           />
         </InputGroup>
@@ -78,7 +76,10 @@ const Header:React.FC<THeaderProps> = ({isOpen,onOpen,onClose,btnRef}) => {
           Sign up
         </Button>
       </HStack>
+    
     </Flex>
+    {menuOpen && <Sidebar/>}
+    </>
   );
 };
 
