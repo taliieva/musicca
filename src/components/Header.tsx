@@ -21,7 +21,7 @@ const Header= () => {
   }
   return (
     <>
-    <Flex padding={20} justifyContent={"space-between"} alignItems={"center"} >
+    <Flex padding={20} justifyContent={"space-between"} alignItems={"center"} width="100%" >
       <HStack gap={20}>
         <HamburgerIcon  onClick={handleMenuClick}/>
         <Image src="/assets/logo.png" alt="logo" width="150px" />

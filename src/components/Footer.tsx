@@ -10,6 +10,7 @@ const Footer = () => {
       justifyContent="center"
       gap="60px"
       padding="40px"
+      width="100%"
     >
       {footerData.footer.map((list) => (
         <VStack key={list.id} alignItems="flex-start">
